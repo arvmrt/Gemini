@@ -1,8 +1,14 @@
 import os
 import google.generativeai as genai
 
-# Add your API Key. Make sure you setup a environment variable with name "GENAI_API_KEY" containing your API Key.
-genai.configure(os.environ.get("GENAI_API_KEY"))
+'''
+Setup a environment variable on Linux Server with name GOOGLE_API_KEY and save the key in there. Make sure to run source command to enable the variable.
+# vi .bashrc
+export GOOGLE_API_KEY="<Input your API Key Here>"  #Add this line at end of file and save file.
+# source .bashrc
+'''
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+genai.configure(api_key=GOOGLE_API_KEY)
 
 # Create the Model
 model = genai.GenerativeModel('gemini-pro')
