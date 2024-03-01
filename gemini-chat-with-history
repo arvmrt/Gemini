@@ -1,0 +1,30 @@
+import os
+import google.generativeai as genai
+
+# Define your prompt with question
+prompt = "Hi there! Thanks for using Gemini-pro"
+
+# Add your API Key. Make sure you setup a environment variable with name "GENAI_API_KEY" containing your API Key.
+genai.configure(os.environ.get("GENAI_API_KEY"))
+
+# Create the Model
+model = genai.GenerativeModel('gemini-pro')
+
+# Create a variable containing previous chat history. Note below format is must else it will give error.
+chat_history = [
+   {
+      'role': 'user',
+      'parts': ['Who is the first president of USA']
+   },
+   {
+      'role': 'model',
+      'parts': ['George Washington']
+   }
+]
+
+# Initialize the chat
+chat = model.start_chat(history=chat_history)
+
+# Now ask a question with context of the previouly given history 
+response = chat.send_message("and who is 16th ?")
+print(response.text)
