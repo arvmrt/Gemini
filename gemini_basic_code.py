@@ -10,6 +10,7 @@ Setup a environment variable on Linux Server with name GOOGLE_API_KEY and save t
 export GOOGLE_API_KEY="<Input your API Key Here>"  #Add this line at end of file and save file.
 # source .bashrc
 '''
+
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
