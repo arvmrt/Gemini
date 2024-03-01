@@ -1,6 +1,6 @@
-# Gemini
+# Google Gemini Pro
 
-## Install following packages using pip
+## Environment Setup
 ### - RHEL8/CENTOS8
 ### - Python 3.12.1
 
