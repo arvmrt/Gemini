@@ -1,9 +1,32 @@
-# Google Gemini Pro
+## Google Gemini Pro
 
-Environment Setup
+
+### Getting Started
+
+#### Prerequisites
+```
 - RHEL8/CENTOS8
 - Python 3.12.1
+```
 
-Install following packages using pip
-- pip install google-generativeai    
-- pip install Pillow                 
+#### Create a virtual environment
+```
+mkdir myenv
+pip -m venv myenv
+source myenv/bin/activate
+```
+
+#### Install Packages 
+```
+pip install google-generativeai
+pip install python-dotenv
+```
+
+#### Create a ".env" file under the project directory and add the following API KEYS:
+```
+GOOGLE_API_KEY = '<Paste your OpenAI API Key>'
+```
+
+
+
+               
