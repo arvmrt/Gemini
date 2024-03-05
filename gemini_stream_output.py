@@ -1,15 +1,12 @@
 import os
+from dotenv import load_dotenv
 import google.generativeai as genai
 
 # Define your prompt with question
 prompt = "Who is the first president of USA?"
 
-'''
-Setup a environment variable on Linux Server with name GOOGLE_API_KEY and save the key in there. Make sure to run source command to enable the variable.
-# vi .bashrc
-export GOOGLE_API_KEY="<Input your API Key Here>"  #Add this line at end of file and save file.
-# source .bashrc
-'''
+# Load OpenAI API Key from .env file
+load_dotenv()
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
